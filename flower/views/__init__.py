@@ -3,7 +3,6 @@ from __future__ import absolute_import
 import re
 import inspect
 import traceback
-from datetime import datetime
 
 from distutils.util import strtobool
 from base64 import b64decode
@@ -19,7 +18,6 @@ class BaseHandler(tornado.web.RequestHandler):
         assert not set(map(lambda x: x[0], functions)) & set(kwargs.keys())
         kwargs.update(functions)
         kwargs.update(url_prefix=self.application.options.url_prefix)
-        kwargs.update(current_time=datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S+00:00"))
         super(BaseHandler, self).render(*args, **kwargs)
 
     def write_error(self, status_code, **kwargs):
