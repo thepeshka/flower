@@ -14,6 +14,9 @@
             <li {% if active_tab == "broker" %}class="active"{% end %}><a href="{{ reverse_url('broker') }}">Broker</a></li>
             <li {% if active_tab == "monitor" %}class="active"{% end %}><a href="{{ reverse_url('monitor') }}">Monitor</a></li>
         </ul>
+        <ul class="nav center">
+          <li><a href="#" id="clock-container" data-datetime="{{ current_datetime }}"><!-- CLOCK PLACEHOLDER --></a></li>
+        </ul>
         <ul class="nav pull-right">
           <li><a href="{{ reverse_url('logout') }}">Logout</a></li>
           <li><a href="https://flower.readthedocs.io" target="_blank">Docs</a></li>
