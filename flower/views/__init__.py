@@ -3,6 +3,7 @@ from __future__ import absolute_import
 import re
 import inspect
 import traceback
+from datetime import datetime
 
 from distutils.util import strtobool
 from base64 import b64decode
@@ -100,3 +101,6 @@ class BaseHandler(tornado.web.RequestHandler):
         prefix = self.application.options.url_prefix
         url = super(BaseHandler, self).reverse_url(*args)
         return prepend_url(url, prefix) if prefix else url
+
+    def current_timestamp(self):
+        return datetime.utcnow().timestamp()
