@@ -1,3 +1,4 @@
+{% from datetime import datetime %}
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -14,7 +15,7 @@
             <li {% if active_tab == "broker" %}class="active"{% end %}><a href="{{ reverse_url('broker') }}">Broker</a></li>
             <li {% if active_tab == "monitor" %}class="active"{% end %}><a href="{{ reverse_url('monitor') }}">Monitor</a></li>
         </ul>
-        <span class="navbar-text mx-auto" id="clock">{{ current_timestamp() }}</span>
+        <span class="navbar-text mx-auto" id="clock">{{ datetime.utcnow().timestamp() }}</span>
         <ul class="nav pull-right">
           <li><a href="{{ reverse_url('logout') }}">Logout</a></li>
           <li><a href="https://flower.readthedocs.io" target="_blank">Docs</a></li>
