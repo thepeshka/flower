@@ -25,6 +25,10 @@ KEYWORDS_DOWN = ('args', 'kwargs')
 UUID_REGEX = re.compile(r'^[\w]{8}(-[\w]{4}){3}-[\w]{12}$')
 
 
+def current_timestamp():
+    return datetime.utcnow().timestamp()
+
+
 def format_time(time, tz):
     dt = datetime.fromtimestamp(time, tz=tz)
     return dt.strftime("%Y-%m-%d %H:%M:%S.%f %Z")
