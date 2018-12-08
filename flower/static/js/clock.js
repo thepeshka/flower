@@ -6,4 +6,4 @@ console.log("Server time", server_time);
 setInterval(function(){
     server_time.setUTCSeconds(server_time.getUTCSeconds()+1);
     clock_container.html(server_time.toUTCString());
-});
+}, 1000);
