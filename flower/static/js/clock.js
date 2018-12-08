@@ -1,5 +1,5 @@
 let clock_container = $("#clock");
-let server_time = clock_container.data("timestamp");
+let server_time = clock_container.data("timestamp") * 1000;
 server_time = new Date(server_time);
 console.log("Server time", server_time);
 
