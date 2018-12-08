@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 import re
 import sys
-from time import time
 
 from celery import current_app
 from datetime import datetime
@@ -24,10 +23,6 @@ string_types = (str, unicode) if PY2 else (str,)
 KEYWORDS_UP = ('ssl', 'uri', 'url', 'uuid', 'eta')
 KEYWORDS_DOWN = ('args', 'kwargs')
 UUID_REGEX = re.compile(r'^[\w]{8}(-[\w]{4}){3}-[\w]{12}$')
-
-
-def get_current_timestamp_utc():
-    return datetime.utcnow().timestamp()
 
 
 def format_time(time, tz):
